@@ -50,7 +50,6 @@ const classtime = ref([
       :text="data + '当前请假人数共' + number + '人'"
     />
     <!-- tabs -->
-
     <!-- 滑动容器 -->
     <swiper class="swiper" :current="activeIndex" @change="activeIndex = $event.detail.current">
       <!-- 滑动项 -->

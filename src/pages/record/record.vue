@@ -8,7 +8,6 @@ var year = now.getFullYear() //得到年份
 var month = now.getMonth() + 1 //得到月份
 var date = now.getDate() //得到日期
 var data = year + '年' + month + '月' + date + '日'
-
 //人数
 const number = ref()
 const getApprovalNumberData = async () => {
@@ -67,5 +66,4 @@ navigator {
   height: 90px;
   width: 90px;
 }
-//
 </style>
