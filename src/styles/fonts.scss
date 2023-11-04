@@ -1,0 +1,41 @@
+@font-face {
+  font-family: "rgqj";
+  src: url('https://at.alicdn.com/t/c/font_4273124_vlvxijyo8t.woff?t=1696647962790') format('woff'),
+       url('https://at.alicdn.com/t/c/font_4273124_vlvxijyo8t.woff?t=1696647962790') format('truetype'),
+       url('https://at.alicdn.com/t/c/font_4273124_vlvxijyo8t.woff?t=1696647962790#rgqj') format('svg');
+}
+
+[class^='icon-'],
+[class*=' icon-']{
+  font-family: "rgqj" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-weixin:before {
+  content: "\e8bb";
+}
+
+.icon-xiangzuo:before {
+  content: "\eb15";
+}
+
+.icon-rili1:before {
+  content: "\e60c";
+}
+
+.icon-right1:before {
+  content: "\e7eb";
+}
+.icon-bug:before {
+  content: "\e8e8";
+}
+
+.icon-xinxikongxin:before {
+  content: "\ed1b";
+}
+
+.icon-jingqingqidai:before {
+  content: "\e618";
+}
