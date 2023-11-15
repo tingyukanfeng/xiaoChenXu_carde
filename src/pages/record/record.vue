@@ -2,6 +2,7 @@
 import { getApprovalNumberAPI } from '@/services/function'
 import { onShow } from '@dcloudio/uni-app'
 import { ref } from 'vue'
+// import '../../static/css/global.css'
 //获取当前年月日
 var now = new Date()
 var year = now.getFullYear() //得到年份
@@ -10,6 +11,7 @@ var date = now.getDate() //得到日期
 var data = year + '年' + month + '月' + date + '日'
 //人数
 const number = ref()
+
 const getApprovalNumberData = async () => {
   const res = await getApprovalNumberAPI()
   number.value = res.data
@@ -59,11 +61,5 @@ onShow(() => {
 .function {
   padding: 20px;
   float: left;
-}
-navigator {
-  display: block;
-  padding: 20px;
-  height: 90px;
-  width: 90px;
 }
 </style>
