@@ -55,7 +55,13 @@
 			"style": {
 				"navigationBarTitleText": "登录"
 			}
-		}
+		},
+    {
+      "path": "pages/signIn/signIn",
+			"style": {
+				"navigationBarTitleText": "签到"
+			}
+    }
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",

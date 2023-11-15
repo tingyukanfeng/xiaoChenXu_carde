@@ -6,3 +6,14 @@ export const getApprovalNumberAPI = () => {
     url: '/student/approval',
   })
 }
+export const cadreApproval = () => {
+  return http({
+    method: 'GET',
+    data: {
+      flag: 0,
+      pagenum: 1,
+      pagesize: 10,
+    },
+    url: '/cadre/approval',
+  })
+}
