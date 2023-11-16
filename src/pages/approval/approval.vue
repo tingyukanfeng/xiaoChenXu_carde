@@ -7,9 +7,14 @@ import type { Approval } from '@/types/home'
 const rows = ref<Approval[]>([])
 const getApproval = async () => {
   const res = await cadreApproval()
+  if (res.data.total == 0) {
+    unrecord.value = true
+  }
+  unrecord.value = true
   console.log(res.data)
   rows.value = res.data.rows
 }
+const unrecord = ref(false)
 onShow(() => {
   getApproval()
 })
@@ -19,6 +24,7 @@ const onScrolltolower = () => {
 </script>
 <template>
   <scroll-view @scrolltolower="onScrolltolower" scroll-y>
+    <text v-if="unrecord" style="align-items: center"> --暂无记录-- </text>
     <view v-for="item in rows" :key="item.id" class="card">
       <p>学号: {{ item.username }}</p>
       <p>原因: {{ item.cause }}</p>
