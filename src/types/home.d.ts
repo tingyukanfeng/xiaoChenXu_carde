@@ -1,7 +1,7 @@
 export type Approval = {
   id: number
   flag: string
-  data: string
+  date: string
   cause: string
   username: string
 }
