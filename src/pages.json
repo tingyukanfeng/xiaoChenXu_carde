@@ -57,6 +57,7 @@
         //"navigationStyle": "custom",
       }
     },
+
     {
       "path": "pages/signIn/signIn",
       "style": {
