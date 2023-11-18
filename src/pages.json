@@ -1,139 +1,143 @@
 {
-	"easycom": {
-		"autoscan": true,
-		"custom": {
-			// uni-ui 规则如下配置
-			"^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue"
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      // uni-ui 规则如下配置
+      "^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue"
       //"^RGQJ(.*)":"@/components/RGQJ$1.vue"
-		}
-	},
-	"pages": [
-		//pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		{
-			"path": "pages/record/record",
-			"style": {
-				//"navigationBarTitleText": "请假"
-        //"navigationStyle": "custom"
-			}
-		},
+    }
+  },
+  "pages": [
+    //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
     {
-      "path":"pages/approval/approval",
+      "path": "pages/record/record",
       "style": {
-				"navigationBarTitleText": "审批"
+        //"navigationBarTitleText": "请假"
         //"navigationStyle": "custom"
-			}
+      }
     },
     {
-      "path":"pages/fakeNotes/fakeNotes",
+      "path": "pages/approval/approval",
       "style": {
-				"navigationBarTitleText": "录假条"
+        "navigationBarTitleText": "审批"
         //"navigationStyle": "custom"
-			}
+      }
     },
     {
-      "path":"pages/Schedule/Schedule",
+      "path": "pages/fakeNotes/fakeNotes",
       "style": {
-				"navigationBarTitleText": "课表"
+        "navigationBarTitleText": "录假条"
         //"navigationStyle": "custom"
-			}
+      }
     },
     {
-			"path": "pages/function/function",
-			"style": {
-				"navigationBarTitleText": "软工请假"
-			}
-		},
-		{
-			"path": "pages/my/my",
-			"style": {
-				//"navigationBarTitleText": "我的"
-				//"navigationStyle": "custom",
-			}
-		},
-		{
-			"path": "pages/login/login",
-			"style": {
-				"navigationBarTitleText": "登录"
-			}
-		},
+      "path": "pages/Schedule/Schedule",
+      "style": {
+        "navigationBarTitleText": "课表"
+        //"navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/function/function",
+      "style": {
+        "navigationBarTitleText": "软工请假"
+      }
+    },
+    {
+      "path": "pages/my/my",
+      "style": {
+        //"navigationBarTitleText": "我的"
+        //"navigationStyle": "custom",
+      }
+    },
+    {
+      "path": "pages/login/login",
+      "style": {
+        "navigationBarTitleText": "登录"
+      }
+    },
     {
       "path": "pages/signIn/signIn",
-			"style": {
-				"navigationBarTitleText": "签到"
-			}
+      "style": {
+        "navigationBarTitleText": "签到"
+      }
+    },
+    {
+      "path": "pages/signInRecord/signInRecord",
+      "style": {
+        "navigationBarTitleText": "签到记录"
+      }
     }
-	],
-	"globalStyle": {
-		"navigationBarTextStyle": "white",
-		"navigationBarTitleText": "软工请假",
-		"navigationBarBackgroundColor": "#c4e4e3",
-		"backgroundColor": "#F8F8F8"
-	},
-	// 设置 TabBar
-	"tabBar": {
-		"color": "#333",
-		"selectedColor": "#c4e4e3",
-		"backgroundColor": "#fff",
-		"borderStyle": "white",
-		"list": [
-			{
-				"text": "功能·",
-				"pagePath": "pages/record/record",
-				"iconPath": "static/tabs/logs_default.png",
-				"selectedIconPath": "static/tabs/logs_selected.png"
-			},
-			// {
-			// 	"text": "请假",
-			// 	"pagePath": "pages/function/function",
-			// 	"iconPath": "static/tabs/leave_default.png",
-			// 	"selectedIconPath": "static/tabs/leave_selected.png"
-			// },
-			{
-				"text": "我的",
-				"pagePath": "pages/my/my",
-				"iconPath": "static/tabs/user_default.png",
-				"selectedIconPath": "static/tabs/user_selected.png"
-			}
-		]
-	},
-	"subPackages": [
-		{
-			"root": "pagesMember",
-			"pages": [
-				{
-					"path": "profile",
-					"style": {
-						//"navigationBarTitleText": "个人信息"
-						"navigationStyle": "custom"
-					}
-				},
-				{
-					"path": "settings",
-					"style": {
-						//"navigationBarTitleText": "设置"
-					}
-				}
-			]
-		},
-		{
-			"root": "pagesRecord",
-			"pages": [
-				{
-					"path": "detail",
-					"style": {
-						//"navigationBarTitleText": "请假详情"
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "软工请假",
+    "navigationBarBackgroundColor": "#c4e4e3",
+    "backgroundColor": "#F8F8F8"
+  },
+  // 设置 TabBar
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#c4e4e3",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "text": "功能·",
+        "pagePath": "pages/record/record",
+        "iconPath": "static/tabs/logs_default.png",
+        "selectedIconPath": "static/tabs/logs_selected.png"
+      },
+      {
+        "text": "请假",
+        "pagePath": "pages/function/function",
+        "iconPath": "static/tabs/leave_default.png",
+        "selectedIconPath": "static/tabs/leave_selected.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/my/my",
+        "iconPath": "static/tabs/user_default.png",
+        "selectedIconPath": "static/tabs/user_selected.png"
+      }
+    ]
+  },
+  "subPackages": [
+    {
+      "root": "pagesMember",
+      "pages": [
+        {
+          "path": "profile",
+          "style": {
+            //"navigationBarTitleText": "个人信息"
             "navigationStyle": "custom"
-					}
-				}
-			]
-		}
-	],
-	"preloadRule": {
-		"pages/my/my": {
-			"network": "all",
-			"packages": [
-				"pagesMember"
-			]
-		}
-	}
+          }
+        },
+        {
+          "path": "settings",
+          "style": {
+            //"navigationBarTitleText": "设置"
+          }
+        }
+      ]
+    },
+    {
+      "root": "pagesRecord",
+      "pages": [
+        {
+          "path": "detail",
+          "style": {
+            //"navigationBarTitleText": "请假详情"
+            "navigationStyle": "custom"
+          }
+        }
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/my/my": {
+      "network": "all",
+      "packages": ["pagesMember"]
+    }
+  }
 }

@@ -32,9 +32,9 @@ onShow(() => {
     />
   </view>
   <view class="function">
-    <!-- <navigator url="/pages/function/function" open-type="navigate" hover-class="navigator-hover">
+    <navigator url="/pages/function/function" open-type="navigate" hover-class="navigator-hover">
       <text>请假</text>
-    </navigator> -->
+    </navigator>
     <navigator url="/pages/approval/approval" open-type="navigate" hover-class="navigator-hover">
       审批
     </navigator>
@@ -43,6 +43,13 @@ onShow(() => {
     </navigator>
     <navigator url="/pages/Schedule/Schedule" open-type="navigate" hover-class="navigator-hover">
       录课表
+    </navigator>
+    <navigator
+      url="/pages/signInRecord/signInRecord"
+      open-type="navigate"
+      hover-class="navigator-hover"
+    >
+      签到记录
     </navigator>
     <navigator url="/pages/signIn/signIn" open-type="navigate" hover-class="navigator-hover">
       开定位
