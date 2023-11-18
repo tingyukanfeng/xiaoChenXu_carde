@@ -11,7 +11,7 @@ type UpdateInfoParams = {
 export const putUpdateInfo = (leaveData: UpdateInfoParams) => {
   return http({
     method: 'PUT',
-    url: '/student/cadre/addleave',
+    url: '/cadre/addleave',
     data: leaveData,
   })
 }

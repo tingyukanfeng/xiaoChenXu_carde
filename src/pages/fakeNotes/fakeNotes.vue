@@ -11,7 +11,8 @@ const formModel = ref({
 
 const submitForm = async () => {
   // 在这里可以处理表单提交逻辑，formModel 中包含了表单数据
-  console.log('提交表单', formModel.value)
+  console.log('日期', formModel.value.date)
+  formModel.value.date = formModel.value.date.toString()
   const res = await putUpdateInfo(formModel.value)
   console.log(res)
 }

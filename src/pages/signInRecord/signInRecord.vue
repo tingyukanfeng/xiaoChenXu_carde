@@ -17,6 +17,7 @@ const inputDialogConfirm = async () => {
   console.log(formModel.value)
   // 关闭窗口后，恢复默认内容
   const res = await addSignInRecord(formModel.value)
+  console.log(res)
   inputDialog.value.close()
 }
 </script>
