@@ -34,7 +34,7 @@ const cadrePutApproval = async (username: string, state: string) => {
     <view v-for="item in rows" :key="item.id" class="card">
       <p>学号: {{ item.username }}</p>
       <p>原因: {{ item.cause }}</p>
-      <p>时间：{{ item.data }}</p>
+      <p>时间：{{ item.date }}</p>
       <view class="button-container">
         <button
           class="subbutton"

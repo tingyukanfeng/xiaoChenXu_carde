@@ -32,9 +32,6 @@ onShow(() => {
     />
   </view>
   <view class="function">
-    <navigator url="/pages/function/function" open-type="navigate" hover-class="navigator-hover">
-      <text>请假</text>
-    </navigator>
     <navigator url="/pages/approval/approval" open-type="navigate" hover-class="navigator-hover">
       审批
     </navigator>

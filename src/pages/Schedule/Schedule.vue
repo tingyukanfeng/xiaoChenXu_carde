@@ -48,7 +48,7 @@ const summit = async () => {
       <uni-forms-item label="课程名" required>
         <uni-easyinput v-model="formData.courseName" placeholder="请输入课程名" />
       </uni-forms-item>
-      <uni-forms-item label="星期几">
+      <uni-forms-item label="星期几" required>
         <uni-data-select v-model="formData.weekday" :localdata="classtime"></uni-data-select>
       </uni-forms-item>
       <uni-forms-item label="上课时间" required>
