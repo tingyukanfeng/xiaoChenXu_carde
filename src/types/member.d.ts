@@ -8,7 +8,10 @@ type BaseProfile = {
 }
 
 export type LoginResult = BaseProfile & {
-  token: string
+  jwt: string
+  username: string
+  major: string
+  name: string
 }
 
 export type ProfileDetail = BaseProfile & {
@@ -17,4 +20,10 @@ export type ProfileDetail = BaseProfile & {
 
 export type ProfileParams = {
   email: string
+}
+export type LoginResult2 = {
+  jwt: string
+  username: string
+  major: string
+  name: string
 }

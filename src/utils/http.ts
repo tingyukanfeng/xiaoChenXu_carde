@@ -17,7 +17,7 @@ const httpInterceptor = {
       'source-client': 'miniapp',
     }
     const memberStore = useMemberStore()
-    const token = memberStore.profile?.token
+    const token = memberStore.profile?.jwt
     if (token) {
       options.header.Authorization = token
     }
