@@ -11,6 +11,13 @@ const formData = ref({
 })
 const memberStore = useMemberStore()
 const cadreLogin = async () => {
+  if (formData.value.username == '' || formData.value.password == '') {
+    uni.showToast({
+      icon: 'error',
+      title: '请填写表单',
+    })
+    return
+  }
   const res = await CadreLogin(formData.value)
 
   if (res.message == '账号或密码错误') {
