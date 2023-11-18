@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { addSignInRecord } from '@/services/signInRecord'
+import { addSignInRecord, getAllrecord } from '@/services/signInRecord'
+import * as Xlsx from 'xlsx'
 const inputDialog = ref() // 弹出框的引用
 const formModel = ref({
   course_id: '',
@@ -20,6 +21,33 @@ const inputDialogConfirm = async () => {
   console.log(res)
   inputDialog.value.close()
 }
+//导出excel的
+const enNameToCnName = {
+  course_name: '课程名',
+  username: '学号',
+  state: '情况',
+  date: '时间',
+}
+const loading = ref()
+const outExcel = async () => {
+  //   loading.value = true
+  //   const res = await getAllrecord()
+  //   let excelData = res.data.data.map((n: any) => {
+  //     let newItem: never[] = []
+  //     Object.keys(n).forEach((k) => {
+  //       newItem[enNameToCnName[k]] = n[k]
+  //     })
+  //     return newItem
+  //   })
+  //   const xlsxObj = {
+  //     SheetNames: ['sheet1'],
+  //     Sheets: {
+  //       ['sheet1']: Xlsx.utils.json_to_sheet(excelData),
+  //     },
+  //   }
+  //   Xlsx.writeFile(xlsxObj, '积极分子信息表.xlsx')
+  //   loading.value = false
+}
 </script>
 
 <template>
@@ -29,7 +57,11 @@ const inputDialogConfirm = async () => {
         <text class="button-text">添加迟到旷课记录</text>
       </button>
     </uni-section>
-
+    <uni-section title="" type="line" padding>
+      <button class="button" type="primary" @click="outExcel">
+        <text class="button-text">导出excel</text>
+      </button>
+    </uni-section>
     <!-- 输入框示例 -->
     <uni-popup ref="inputDialog" type="dialog">
       <uni-popup-dialog ref="inputClose" title="输入内容" @confirm="inputDialogConfirm">
