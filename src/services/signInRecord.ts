@@ -1,6 +1,6 @@
 import { http } from '@/utils/http'
 
-export const addSignInRecord = (data) => {
+export const addSignInRecord = (data: any) => {
   console.log(111 + data)
   return http({
     method: 'PUT',

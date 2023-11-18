@@ -1,17 +1,19 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-
+import { putUpdateInfo } from '@/services/fakeNotes'
 const formModel = ref({
   flag: 1,
   username: '',
-  date: [],
+  date: '',
   cause: '',
   state: 1,
 })
 
-const submitForm = () => {
+const submitForm = async () => {
   // 在这里可以处理表单提交逻辑，formModel 中包含了表单数据
   console.log('提交表单', formModel.value)
+  const res = await putUpdateInfo(formModel.value)
+  console.log(res)
 }
 </script>
 

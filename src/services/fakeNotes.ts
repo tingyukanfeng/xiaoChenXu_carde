@@ -8,10 +8,10 @@ type UpdateInfoParams = {
   state: number
 }
 
-export const putUpdateInfo = (data: UpdateInfoParams) => {
+export const putUpdateInfo = (leaveData: UpdateInfoParams) => {
   return http({
     method: 'PUT',
-    url: '/cadre/addleave', // 替换为实际的 API 地址
-    data,
+    url: '/student/cadre/addleave',
+    data: leaveData,
   })
 }
