@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { cadreApproval } from '@/services/function'
+import { cadreApproval, cadreFeatApproval } from '@/services/function'
 import { onShow } from '@dcloudio/uni-app'
 import type { Approval } from '@/types/home'
 
@@ -18,24 +18,35 @@ const unrecord = ref(false)
 onShow(() => {
   getApproval()
 })
-const onScrolltolower = () => {
-  console.log('触底了')
+const cadrePutApproval = async (username: string, state: string) => {
+  const res = await cadreFeatApproval(username, state)
+  if (res.message == 'success') {
+    uni.showToast({
+      title: '操作成功',
+    })
+  }
+  getApproval()
 }
 </script>
 <template>
-  <scroll-view @scrolltolower="onScrolltolower" scroll-y>
+  <scroll-view scroll-y>
     <text v-if="unrecord" style="align-items: center"> --暂无记录-- </text>
     <view v-for="item in rows" :key="item.id" class="card">
       <p>学号: {{ item.username }}</p>
       <p>原因: {{ item.cause }}</p>
       <p>时间：{{ item.data }}</p>
       <view class="button-container">
-        <button class="subbutton" style="margin-top: 10px; background-color: #c4e4e3; color: #fff">
+        <button
+          class="subbutton"
+          style="margin-top: 10px; background-color: #c4e4e3; color: #fff"
+          @click="cadrePutApproval(item.username, '1')"
+        >
           同意
         </button>
         <button
           class="subbutton"
           style="margin-top: 10px; background-color: rgb(201, 231, 145); color: #fff"
+          @click="cadrePutApproval(item.username, '2')"
         >
           拒绝
         </button>

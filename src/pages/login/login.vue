@@ -1,4 +1,36 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from 'vue'
+import { useMemberStore } from '@/stores'
+// import { useMemberStore } from '@/stores/modules/member'
+import { CadreLogin } from '@/services/function'
+import type { LoginResult } from '@/types/member'
+
+const formData = ref({
+  username: '',
+  password: '',
+})
+const memberStore = useMemberStore()
+const cadreLogin = async () => {
+  const res = await CadreLogin(formData.value)
+
+  if (res.message == '账号或密码错误') {
+    uni.showToast({
+      icon: 'error',
+      title: res.message,
+    })
+  }
+
+  if (res.message == 'success') {
+    uni.showToast({
+      title: '登录成功',
+    })
+    memberStore.setProfile(res.data as LoginResult)
+    uni.switchTab({ url: '/pages/record/record' })
+  }
+
+  console.log(res)
+}
+</script>
 
 <template>
   <view class="viewport">
@@ -7,16 +39,26 @@
     </view>
     <view class="login">
       <!-- 网页端表单登录 -->
-      <!-- <input class="input" type="text" placeholder="请输入学号" />
-      <input class="input" type="text" password placeholder="请输入密码" />
-      <button class="button phone">登录</button> -->
+      <uni-forms ref="form" :modelValue="formData">
+        <uni-forms-item name="username">
+          <uni-easyinput
+            type="text"
+            v-model="formData.username"
+            prefixIcon="person"
+            placeholder="请输入账号"
+          />
+        </uni-forms-item>
+        <uni-forms-item name="password">
+          <uni-easyinput
+            type="password"
+            prefixIcon="locked"
+            v-model="formData.password"
+            placeholder="请输入密码"
+          />
+        </uni-forms-item>
+      </uni-forms>
+      <button class="button phone" @click="cadreLogin">登录</button>
 
-      <!-- 小程序端授权登录-->
-      <input class="input" type="text" placeholder="请输入学号" />
-      <button class="button phone">
-        <text class="icon icon-weixin"></text>
-        微信授权登录
-      </button>
       <view class="tips">登录即视为你同意《服务条款》和《软工请假隐私协议》</view>
     </view>
   </view>
